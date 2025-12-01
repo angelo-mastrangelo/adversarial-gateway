@@ -1,0 +1,28 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8000
+  },
+  "security_chain": [
+    {
+      "name": "RateLimitHandler",
+      "enabled": true,
+      "parameters": {"limit": 8, "window_seconds": 60}
+    },
+    {
+      "name": "AuthHandler",
+      "enabled": true,
+      "parameters": {"token_secret": "my-super-secret-key"}
+    },
+    {
+      "name": "ValidationHandler",
+      "enabled": true,
+      "parameters": {"max_size_mb": 5, "allowed_types": ["image/jpeg", "image/png"]}
+    },
+    {
+      "name": "SanitizationHandler",
+      "enabled": true,
+      "parameters": {"method": "resize", "target_size": [224, 224]}
+    }
+  ]
+}
