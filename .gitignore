@@ -1,4 +1,21 @@
-venv/
+# Python
 __pycache__/
-*.pyc
-.DS_Store
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# LaTeX (file temporanei che non servono)
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.pdf 
+# (Nota: Rimuovi *.pdf dalla riga sopra se VUOI caricare anche il PDF della tesi su Git)
+
+# IDE
+.vscode/
+.idea/
