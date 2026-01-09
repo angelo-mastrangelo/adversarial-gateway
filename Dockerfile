@@ -11,8 +11,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copia tutto il codice sorgente nel container
 COPY . .
 
-# Esponi la porta 8000 (quella di FastAPI)
+# porta 8000
 EXPOSE 8000
 
-# Il comando per avviare il server (lo stesso che hai usato tu)
-CMD ["python", "-m", "src.server"]
+# Il comando per avviare il server
+CMD ["uvicorn", "src.server:app", "--host", "0.0.0.0", "--port", "8000"]
